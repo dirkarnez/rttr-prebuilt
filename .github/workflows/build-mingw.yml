@@ -26,7 +26,7 @@ jobs:
         shell: cmd
         run: |
           cd rttr &&^
-          cmake.exe -G"MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DBUILD_RTTR_DYNAMIC=OFF -DBUILD_STATIC=ON -DBUILD_EXAMPLES=OFF -DBUILD_DOCUMENTATION=OFF -DBUILD_INSTALLER=ON -DBUILD_PACKAGE=OFF -DUSE_PCH=OFF -DBUILD_WITH_STATIC_RUNTIME_LIBS=ON -DBUILD_UNIT_TESTS=OFF -DCMAKE_INSTALL_PREFIX="build/${{ env.cmakeInstallationPath }}" -B./build &&^
+          cmake.exe -G"MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DBUILD_RTTR_DYNAMIC=OFF -DBUILD_STATIC=ON -DBUILD_EXAMPLES=OFF -DBUILD_DOCUMENTATION=OFF -DBUILD_INSTALLER=ON -DBUILD_PACKAGE=OFF -DUSE_PCH=OFF -DBUILD_WITH_STATIC_RUNTIME_LIBS=OFF -DBUILD_UNIT_TESTS=OFF -DCMAKE_INSTALL_PREFIX="build/${{ env.cmakeInstallationPath }}" -B./build &&^
           cd build && cmake --build . && cmake --install .
           
       - name: Archive Release
